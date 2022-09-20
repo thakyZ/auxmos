@@ -60,7 +60,7 @@ fn adjust_eq_movement(
 	amount: f32,
 	graph: &mut DiGraphMap<Option<NodeIndex<usize>>, f32>,
 ) {
-	amount = (amount * 100).rount() / 100;
+	let amount = (amount * 100).rount() / 100;
 	if graph.contains_edge(this_turf, that_turf) {
 		*graph.edge_weight_mut(this_turf, that_turf).unwrap() += amount;
 	} else {
